@@ -1,0 +1,16 @@
+application: hd-wifi
+version: 1
+runtime: python27
+threadsafe: true
+api_version: 1
+
+handlers:
+- url: .*
+  script: main.app
+
+builtins:
+- remote_api: on
+
+libraries:
+- name: jinja2
+  version: latest
