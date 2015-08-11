@@ -3,3 +3,18 @@
   min-height: 200px;
   margin-top: 10px;
 }
+
+.error-box {
+  margin-top: 50px;
+  background: #B23030;
+  text-align: center;
+  width: 300px;
+  color: white;
+}
+
+.rounded {
+  border-radius: 25px;
+  background: #A9D2EA;
+  padding: 20px;
+}
+

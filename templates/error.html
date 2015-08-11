@@ -1,0 +1,15 @@
+{% extends 'templates/base.html' %}
+{% block content %}
+
+<div class="rounded error-box" style="margin: 0 auto; margin-top: 50px;">
+{% if internal %}
+  <h2>Oh Crap!</h2>
+  <h3>An unexpected error occurred. Please try again later.</h3>
+  <p>{{ message }}</p>
+{% else %}
+  <h2>Error</h2>
+  <h4>{{ message|safe }}</h4>
+{% endif %}
+</div>
+
+{% endblock %}
