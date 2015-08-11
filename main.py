@@ -62,7 +62,7 @@ class GrantHandler(BaseHandler):
 
     # Tell the Meraki system to grant access.
     url = "%s?continue_url=%s" % (base_grant_url, user_continue_url)
-    self.redirect(url)
+    self.redirect(str(url))
 
 
 app = webapp2.WSGIApplication([
