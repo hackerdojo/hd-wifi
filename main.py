@@ -45,11 +45,13 @@ class GrantHandler(BaseHandler):
     if not token:
       response = self.render("templates/error.html", message="Session expired.")
       self.response.out.write(response)
+      self.response.set_status(401)
       return
     grant_info = memcache.get(token)
     if not grant_info:
       response = self.render("templates/error.html", message="Session expired.")
       self.response.out.write(response)
+      self.response.set_status(401)
       return
 
     base_grant_url, user_continue_url = grant_info
