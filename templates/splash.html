@@ -1,1 +1,44 @@
-<p>Hello World!</p>
+{% extends 'templates/base.html' %}
+{% block content %}
+
+<div class="jumbotron w3-blue-grey w3-card-8">
+  <div class="row">
+    <div class="col-sm-3">
+      <img src="static/dojo_icon.svg" class="img-responsive"
+          style="padding: 20px; max-width: 200px; max-height: 200px;
+                 display: block; margin: 0 auto;">
+    </div>
+    <div class="col-sm-9" style="padding-left: 30px;">
+      <h1>HackerDojo WiFi</h1>
+      <p>Welcome! You must log in to get on the WiFi.
+         <br>If you are not a member, please use HD-Guest.</p>
+    </div>
+  </div>
+</div>
+
+<div class="w3-row-padding">
+  <div class="w3-third">
+    <div class="w3-container w3-card-4 w3-yellow splash-card">
+      <h2>Fast</h2>
+      <h4>Enjoy 20 Mbit/s bi-directional speeds.</h4>
+    </div>
+  </div>
+  <div class="w3-third">
+    <div class="w3-container w3-card-4 w3-yellow splash-card">
+      <h2>Free</h2>
+      <h4>Unlimited access for all members.</h4>
+    </div>
+  </div>
+  <div class="w3-third">
+    <div class="w3-container w3-card-4 w3-red splash-card">
+      <h2>Get Started</h2>
+      <h4>You must log in to continue.</h4>
+      <div style="text-align: center; padding-top: 8%;">
+        <button type="button" class="btn btn-primary btn-lg"
+            style="margin: 0 auto;">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

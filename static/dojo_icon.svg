@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#EE2836;}
+	.st1{fill:#FFFFFF;}
+</style>
+<g id="Background">
+	<path class="st0" d="M575.5,612h-539C16.4,612,0,595.6,0,575.5v-539C0,16.4,16.4,0,36.5,0h539C595.6,0,612,16.4,612,36.5v539
+		C612,595.6,595.6,612,575.5,612z"/>
+</g>
+<g id="Trellis">
+	<path class="st1" d="M62,174h113.7v-19.3c0,0,22-32.7,47.7,0v292c0,0-22.7,51-47.7,0v-145h-82v-41.3h83.7v-46H84.7
+		C84.7,214.3,84,193.3,62,174z"/>
+	<path class="st1" d="M236.7,172.6h153.7v-16.3c0,0,20.7-35.2,44.7-1.5v297.3c0,0-22,38.4-46,0.7V299.1H236.7V260h62v-33.3h16.7v34
+		h73v-51.3H236.7V172.6z"/>
+	<path class="st1" d="M448.3,176.7h90.3c0,0-12.3,4.7-16,34h-74.3V176.7z"/>
+	<rect x="446" y="262" class="st1" width="66.3" height="36.3"/>
+</g>
+</svg>
