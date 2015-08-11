@@ -1,4 +1,4 @@
-application: hd-wifi
+application: hd-wifi-1034
 version: 1
 runtime: python27
 threadsafe: true
