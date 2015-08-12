@@ -38,20 +38,24 @@ class SplashHandler(BaseHandler):
 
 """ Grants access to the user once they have logged in. """
 class GrantHandler(BaseHandler):
+  """ Shows the "Session expired" error. """
+  def __session_expired(self):
+    response = self.render("templates/error.html", message="Session expired.")
+    self.response.out.write(response)
+    self.response.set_status(401)
+
+    self.response.delete_cookie("grant_token")
+
   @AuthHandler.login_required
   def get(self):
     # Get the info we need to grant access.
     token = self.request.cookies.get("grant_token")
     if not token:
-      response = self.render("templates/error.html", message="Session expired.")
-      self.response.out.write(response)
-      self.response.set_status(401)
+      self.__session_expired()
       return
     grant_info = memcache.get(token)
     if not grant_info:
-      response = self.render("templates/error.html", message="Session expired.")
-      self.response.out.write(response)
-      self.response.set_status(401)
+      self.__session_expired()
       return
 
     base_grant_url, user_continue_url = grant_info
