@@ -26,6 +26,7 @@ class BaseTest(unittest.TestCase):
     self.testbed = testbed.Testbed()
     self.testbed.activate()
     self.testbed.init_memcache_stub()
+    self.testbed.init_user_stub()
 
   def tearDown(self):
     self.testbed.deactivate()
@@ -76,7 +77,8 @@ class GrantHandlerTest(BaseTest):
   def setUp(self):
     super(GrantHandlerTest, self).setUp()
 
-    AuthHandler.simulate_user({"email": "testy.testerson@gmail.com"})
+    self.testbed.setup_env(user_email="ttesterson@hackerdojo.com",
+                           overwrite=True)
 
   """ Tests that it shows an error if the session does not exist. """
   def test_bad_session(self):

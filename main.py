@@ -1,11 +1,11 @@
 import logging
 
-from google.appengine.api import memcache
+from google.appengine.api import memcache, users
+from google.appengine.ext.webapp import util
 
 from webapp2_extras import security
 import webapp2
 
-from shared.auth import AuthHandler
 from base_handler import BaseHandler
 
 
@@ -53,8 +53,19 @@ class GrantHandler(BaseHandler):
 
     self.response.delete_cookie("grant_token")
 
-  @AuthHandler.login_required
+  @util.login_required
   def get(self):
+    user = users.get_current_user()
+    if "@hackerdojo.com" not in user.email():
+      logout_url = users.create_logout_url(self.request.uri)
+      response = self.render("templates/error.html",
+                             message="Please use a @hackerdojo.com email.<br>" \
+                                     "<a href=\"%s\">Try again.</a>" % \
+                                     (logout_url))
+      self.response.out.write(response)
+      self.response.set_status(401)
+      return
+
     # Get the info we need to grant access.
     token = self.request.cookies.get("grant_token")
     logging.debug("Grant request with token %s." % (token))
